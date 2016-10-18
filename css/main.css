@@ -1,0 +1,120 @@
+@import 'https://fonts.googleapis.com/css?family=Open+Sans:400,700';
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+html {
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 16px;
+  background-color: #eee;
+}
+header {
+  background-color: #a00;
+  border-bottom: solid 2px black;
+  text-align: center;
+}
+h1 {
+  font: normal normal 700 2rem/2.8rem 'Open Sans', Arial, sans-serif;
+}
+h2 {
+  font: normal normal normal 1.5rem/2.1rem 'Open Sans', Arial, sans-serif;
+}
+h1, h2 {
+  color: black;
+}
+.buttons {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  flex-grow: 0;
+}
+.button {
+  background-color: #f4c200;
+  border-radius: 3px;
+  border: 2px solid black;
+  color: black;
+  display: inline-block;
+  font: normal normal normal 2rem/2rem 'Open Sans', Arial, sans-serif;
+  padding: 1rem;
+  cursor: pointer;
+  transition:
+    background-color 0.25s 0.0s,
+    color 0.25s 0.0s;
+}
+.button:hover {
+  background-color: #fff;
+  border-radius: 3px;
+  border: 2px solid black;
+  color: #c23551;
+  display: inline-block;
+  font: normal normal normal 2rem/2rem 'Open Sans', Arial, sans-serif;
+  padding: 1rem;
+  cursor: pointer;
+  transition:
+    background-color 0.25s 0.0s,
+    color: 0.25s 0.0s;
+}
+.white {
+  color: white;
+}
+.item {
+  opacity: 0;
+  animation: fadeIn ease-in 1;
+  animation-fill-mode: forwards;
+  animation-duration: 1s;
+}
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+
+/* responsive vertical layout */
+html, body, #app, .root {
+  height: 100%;
+}
+
+/*  main layout: root > header + .buttons + shapes */
+.root {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: stretch;
+}
+header {
+  flex-grow: 0;
+}
+.buttons {
+  flex-grow: 0;
+}
+.shapes {
+  display: flex;
+  flex-grow: 1;
+}
+
+/* vertically responsive shapes */
+.shape {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  flex: 1; /* to fill height b/c parent is flex item (and container) */
+}
+.shape-row {
+  display: flex;
+  justify-content: center;
+  height: 3rem;
+  flex-shrink: 1;
+}
+.item {
+  background-color: #a00;
+  height: 100%;
+  width: 3rem;
+  border: 2px solid black;
+  border-radius: 50%;
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+  .buttons {
+    margin-top: 0.5rem;
+  }
+}
