@@ -12,7 +12,7 @@
     "live-server": "^1.1.0"
   },
   "scripts": {
-    "build": "babel app.jsx -o app.js -w",
+    "build": "babel app.jsx -d build -w",
     "start": "electron ."
   }
 }
