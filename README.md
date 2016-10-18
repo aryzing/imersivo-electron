@@ -1,6 +1,6 @@
 # Imersivo coding challenge - Electron prompt
 
-Working Electron app based on React challenge.
+Working Electron app based on previous React challenge.
 
 Run it with
 
